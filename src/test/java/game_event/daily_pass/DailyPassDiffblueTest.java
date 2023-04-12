@@ -127,5 +127,37 @@ public class DailyPassDiffblueTest {
         // Assert
         assertEquals(0L, actualCountStreakResult);
     }
+
+    /**
+     * Method under test: {@link DailyPass#calcMilestone(long)}
+     */
+    @Test
+    public void testCalcMilestone() {
+        // Arrange
+        DailyPass dailyPass = new DailyPass();
+        long      epochSec  = 1L;
+
+        // Act
+        int actualCalcMilestoneResult = dailyPass.calcMilestone(epochSec);
+
+        // Assert
+        assertEquals(1, actualCalcMilestoneResult);
+    }
+
+    /**
+     * Method under test: {@link DailyPass#calcMilestone(long)}
+     */
+    @Test
+    public void testCalcMilestone2() {
+        // Arrange
+        DailyPass dailyPass = new DailyPass();
+        long      epochSec  = Long.MAX_VALUE;
+
+        // Act
+        int actualCalcMilestoneResult = dailyPass.calcMilestone(epochSec);
+
+        // Assert
+        assertEquals(5, actualCalcMilestoneResult);
+    }
 }
 
